@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SETTINGS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>Dark Theme</ion-label>
+    <ion-checkbox [(ngModel)]="darkThemeChecked" 
+                  [(ngChecked)]="darkThemeChecked"
+                  (mouseup)="isChecked(darkThemeChecked)">
+                  </ion-checkbox>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+               <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Top posts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="top">
+  <ion-card *ngFor="let p of posts">
+
+    <ion-item>
+      <ion-card-header class="cardHeader">{{p.data.title}}</ion-card-header>
+      <ion-row>
+        <ion-col text-left>/r/{{p.data.subreddit}}</ion-col>
+        <ion-col text-right>{{p.data.author}}</ion-col>
+      </ion-row>
+    </ion-item>
+
+    <img *ngIf="p.data.thumbnail !== 'default'" src="{{p.data.thumbnail}}">
+
+    <ion-card-content>
+      <p></p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col text-left>
+        <button primary clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{p.data.score}} Likes</div>
+      </button>
+      </ion-col>
+      <ion-col text-right>
+        <button primary clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>{{p.data.num_comments}} Comments</div>
+      </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>To Do</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="todo">
+  <ion-list>
+    <button ion-item *ngFor="let todo of todos;">
+      <div [innerHTML]="'- ' + todo"></div>
+    </button>
+  </ion-list>
+</ion-content>
